@@ -106,14 +106,9 @@
     }
 
     @media (max-width: 768px) {
-        .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
+      
         button {
-            width: 100%;
+            width:70%;
         }
     }
 
@@ -142,7 +137,19 @@
         <button><span>Linkedin Link</span></button>
         <button><span>Telegram Link</span></button>
     </div>
-
+    <script>
+        const syncPointer = ({ x: pointerX, y: pointerY }) => {
+            const x = pointerX.toFixed(2);
+            const y = pointerY.toFixed(2);
+            const xp = (pointerX / window.innerWidth).toFixed(2);
+            const yp = (pointerY / window.innerHeight).toFixed(2);
+            document.documentElement.style.setProperty('--x', x);
+            document.documentElement.style.setProperty('--xp', xp);
+            document.documentElement.style.setProperty('--y', y);
+            document.documentElement.style.setProperty('--yp', yp);
+        };
+        document.body.addEventListener('pointermove', syncPointer);
+    </script>
  
 </body>
 
