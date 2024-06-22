@@ -10,10 +10,24 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
         background-color: black;
     }
 
+    .y{
+        display: flex;
+        margin-top: 20px;
+        align-self:center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
     button {
         color: white;
         border-radius: 1rem;
@@ -24,18 +38,15 @@
         border: 4px solid transparent;
         box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
         cursor: pointer;
-        background:
-            linear-gradient(var(--bg), var(--bg)) padding-box,
-            var(--glow),
-            linear-gradient(black, black) border-box;
+        background: linear-gradient(var(--bg), var(--bg)) padding-box,
+            var(--glow), linear-gradient(black, black) border-box;
         transition: background-size 0.24s;
         touch-action: none;
         position: relative;
         padding: 1rem 2rem;
         width: 400px;
-        height:100px;
+        height: 100px;
     }
-
 
     button::before {
         content: "";
@@ -45,14 +56,12 @@
         background: var(--bg);
         z-index: 2;
         color: white;
-        /*   border: 4px solid transparent; */
         border-radius: 1rem;
     }
 
     :root:has(button:active) {
         --size: 300px;
     }
- 
 
     *,
     *:after,
@@ -60,7 +69,6 @@
         box-sizing: border-box;
     }
 
- 
     :root {
         --x: 0;
         --y: 5544540;
@@ -84,38 +92,56 @@
         z-index: 2;
         position: relative;
         inset: 0;
-        color:wheat;
+        color: wheat;
     }
-     
-    .container{
+
+    .container {
         display: flex;
         flex-direction: column;
-        gap: 15px;  
+        gap: 15px;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
         height: 100vh;
+       
     }
-c
 
+    @media (max-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1200px) {
+        button {
+            width: 300px;
+            height: 80px;
+        }
+    }
 </style>
 
 <body>
     <div class="container">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="">
-                <button ><span>Instagram LInk</span></button>
-                <button><span>Us Link</span></button>
-                <button><span>Twitter Link</span></button>
-                <button><span>Facebook Link</span></button>
-                <button><span>Github Link</span></button>
-                <button><span>Youtube Link</span></button>
-                <button><span>Linkedin Link</span></button>
-                <button><span>Telegram Link</span></button>
-           
-        
+        <div class="y">  <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt=""
+            style="width: 200px;">
+        <h1 style="color: wheat;">
+            Revaais
+        </h1></div>
+       
+        <button><span>Instagram Link</span></button>
+        <button><span>US Link</span></button>
+        <button><span>Twitter Link</span></button>
+        <button><span>Facebook Link</span></button>
+        <button><span>Github Link</span></button>
+        <button><span>Youtube Link</span></button>
+        <button><span>Linkedin Link</span></button>
+        <button><span>Telegram Link</span></button>
     </div>
-
-
-
 
     <script>
         const syncPointer = ({ x: pointerX, y: pointerY }) => {
