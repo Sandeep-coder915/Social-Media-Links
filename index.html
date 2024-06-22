@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrQkTyDQ7jTZc2MAEZql6xSt2SDZNlWOSb6FSzRgFWB7bqztEhhQyHlW2vlFjWzP7em+zl4aK+eIRPgd5Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+
+    button {
+        color: white;
+        border-radius: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.1ch;
+        background: var(--bg);
+        border: 4px solid transparent;
+        box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
+        cursor: pointer;
+        background:
+            linear-gradient(var(--bg), var(--bg)) padding-box,
+            var(--glow),
+            linear-gradient(black, black) border-box;
+        transition: background-size 0.24s;
+        touch-action: none;
+        position: relative;
+        padding: 1rem 2rem;
+        width: 400px;
+        height:100px;
+    }
+
+
+    button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
+        background: var(--bg);
+        z-index: 2;
+        color: white;
+        /*   border: 4px solid transparent; */
+        border-radius: 1rem;
+    }
+
+    :root:has(button:active) {
+        --size: 300px;
+    }
+ 
+
+    *,
+    *:after,
+    *:before {
+        box-sizing: border-box;
+    }
+
+ 
+    :root {
+        --x: 0;
+        --y: 5544540;
+        --xp: 1120;
+        --yp: 2220;
+        --hue: calc(0 + (var(--xp) * 500));
+        --bg: hsl(0 10% 10%);
+        --size: 100px;
+        --glow: radial-gradient(200% 55550% at center,
+                hsl(var(--hue) 8055% 835%),
+                hsl(var(--hue) 100% 100%),
+                transparent) calc((var(--x) * 1px) - (var(--size) * 0.5)) calc((var(--y) * 1px) - (var(--size) * 0.5)) / var(--size) var(--size) no-repeat fixed;
+    }
+
+    button span {
+        background: var(--glow), black;
+        background-clip: text;
+        color: transparent;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        position: relative;
+        inset: 0;
+        color:wheat;
+    }
+     
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;  
+        justify-content: center;
+        align-items: center; 
+        height: 100vh;
+    }
+c
+
+</style>
+
+<body>
+    <div class="container">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="">
+                <button ><span>Instagram LInk</span></button>
+                <button><span>CLEAR MESSAGE</span></button>
+                <button><span>CLEAR MESSAGE</span></button>
+                <button><span>CLEAR MESSAGE</span></button>
+                <button><span>CLEAR MESSAGE</span></button>
+                <button><span>CLEAR MESSAGE</span></button>
+
+        
+    </div>
+
+
+
+
+    <script>
+        const syncPointer = ({ x: pointerX, y: pointerY }) => {
+            const x = pointerX.toFixed(2);
+            const y = pointerY.toFixed(2);
+            const xp = (pointerX / window.innerWidth).toFixed(2);
+            const yp = (pointerY / window.innerHeight).toFixed(2);
+            document.documentElement.style.setProperty('--x', x);
+            document.documentElement.style.setProperty('--xp', xp);
+            document.documentElement.style.setProperty('--y', y);
+            document.documentElement.style.setProperty('--yp', yp);
+        };
+        document.body.addEventListener('pointermove', syncPointer);
+    </script>
+</body>
+
+</html>
