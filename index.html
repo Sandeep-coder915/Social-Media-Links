@@ -109,6 +109,9 @@
 
     #qrcode {
         margin-top: 20px;
+        border: 2px solid white;
+     
+         
     }
 
  
@@ -141,7 +144,7 @@
             margin-top:6%;
             height: 100px;
            
-            width: 110px;
+            width: 100px;
             display: flex;justify-content: center;
             align-content: center;
         }
@@ -218,7 +221,7 @@
                     Link</span></button></a>
     </div>
   <div class="qrcont"> <h1 style="color: wheat;"> Qr Code</h1>
-    <div id="qrcode"> </div></div></div>
+    <div id="qrcode"><img src="./image.png" alt=""></div></div></div>
     <script>
         const syncPointer = ({ x: pointerX, y: pointerY }) => {
             const x = pointerX.toFixed(2);
